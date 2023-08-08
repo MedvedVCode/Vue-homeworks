@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 100;
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.body {
+  padding: 100px;
+}
+
+.sort-list {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  padding-left: 30px;
+}
+.sort-button {
+  text-transform: capitalize;
+  border: 1px solid teal;
+  border-radius: 20px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.sort-button:hover {
+  color: teal;
+}
+
+.result-list {
+  list-style: none;
+  padding: 30px;
+}
+.result-item {
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  border: 1px solid teal;
+  border-radius: 10px;
+}
+.result-item__name {
+  text-transform: uppercase;
+}
+.result-item__price {
+  font-weight: 900;
+}/*# sourceMappingURL=style.css.map */

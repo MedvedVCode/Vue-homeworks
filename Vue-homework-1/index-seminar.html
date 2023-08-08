@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--    <div>Товаров в корзине {{ goodsCount }}</div>-->
+<!--    <div v-for="good in goodsList" :key="good.id">-->
+<!--        <div>{{ good.title }}</div>-->
+<!--        <button @click="addToCart(good)">{{ good.btnText }}</button>-->
+<!--    </div>-->
+<!--    <button @click="isOlder">Мне исполнилось 14 лет</button>-->
+<!--    <button @click="isYounger">Мне еще нет 14 лет</button>-->
+<!--    <button @click="setAllowedState(true)">Мне исполнилось 14 лет</button>-->
+<!--    <button @click="setAllowedState(false)">Мне еще нет 14 лет</button>-->
+
+<!--    <div v-if="isAllowed">-->
+<!--        Можете заказать товар-->
+<!--    </div>-->
+<!--    <div v-else>-->
+<!--        Доступ закрыт-->
+<!--    </div>-->
+    <button @click="generateNumber()">Generate</button>
+<!--    <div>{{ randomTxt }}</div>-->
+<!--    <div>{{ randomNumber() }}</div>-->
+    <div>{{ randomNumber }}</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            goodsCount: 0,
+            goodsList: [
+                {
+                    id: 1,
+                    title: 'Good 1',
+                    inCart: false,
+                    btnText: 'В корзину',
+                },
+                {
+                    id: 2,
+                    title: 'Good 2',
+                    inCart: false,
+                    btnText: 'В корзину',
+                },
+                {
+                    id: 3,
+                    title: 'Good 3',
+                    inCart: false,
+                    btnText: 'В корзину',
+                },
+                {
+                    id: 4,
+                    title: 'Good 4',
+                    inCart: false,
+                    btnText: 'В корзину',
+                },
+            ],
+            isAllowed: false,
+            randomNum: 0,
+            // randomTxt: '',
+        },
+        methods: {
+            addToCart(good) {
+                if (!good.inCart) {
+                    this.goodsCount++;
+                    good.inCart = true;
+                    good.btnText = 'Товар в корзине';
+                }
+            },
+            // isOlder() {
+            //     this.isAllowed = true;
+            // },
+            // isYounger() {
+            //     this.isAllowed = false;
+            // },
+            setAllowedState(state) {
+                this.isAllowed = state;
+            },
+            // randomNumber(){
+            //     this.randomNum = Math.floor(Math.random()*10) + 1;
+            //     if (this.randomNum < 5){
+            //         this.randomTxt='Число меньше 5';
+            //     } else if( this.randomNum >= 5 && this.randomNum <9) {
+            //         this.randomTxt='Число между 5 и 9';
+            //     } else {
+            //         this.randomTxt='Число равно 10';
+            //     }
+            // },
+            generateNumber() {
+                this.randomNum = Math.floor(Math.random()*10) + 1;
+            },
+            // randomNumber(){
+            //     if (this.randomNum < 5){
+            //         return 'Число меньше 5';
+            //     } else if( this.randomNum >= 5 && this.randomNum < 9) {
+            //         return 'Число между 5 и 9';
+            //     } else {
+            //         return 'Число равно 10';
+            //     }
+            // },
+        },
+        computed: {
+            randomNumber(){
+                if (this.randomNum < 5){
+                    return 'Число меньше 5';
+                } else if( this.randomNum >= 5 && this.randomNum < 9) {
+                    return 'Число между 5 и 9';
+                } else {
+                    return 'Число равно 10';
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

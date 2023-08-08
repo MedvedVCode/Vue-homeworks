@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/css/style.css"
+    />
+    <title>Vue-homework-2</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"
+      defer
+    ></script>
+    <script
+      src="script.js"
+      defer
+    ></script>
+  </head>
+  <body class="body">
+    <section id="app">
+      <h1 class="title">Сортировка по цене:</h1>
+      <ul class="sort-list">
+        <li class="sort-item">
+          <button
+            class="sort-button"
+            @click="setState('up')"
+          >
+            цена убывает к концу
+          </button>
+        </li>
+        <li class="sort-item">
+          <button
+            class="sort-button"
+            @click="setState('down')"
+          >
+            ценв возрастает к концу
+          </button>
+        </li>
+        <li class="sort-item">
+          <button
+            class="sort-button"
+            @click="setState('origin')"
+          >
+            исходный массив
+          </button>
+        </li>
+      </ul>
+      <ul class="result-list">
+        <li
+          class="result-item"
+          v-for="({id, name, price},index) in sortedArray"
+          :key="id"
+        >
+          <p class="result-item__index">№ {{index + 1}}:</p>
+          <p class="result-item__name">{{name}} ~</p>
+          <p class="result-item__price">{{price}} рубчиков</p>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>
