@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.blog {
+  &-page {
+    display: flex;
+    gap: 30px;
+    align-items: start;
+    padding-top: 50px;
+    padding-left: 50px;
+  }
+  &-wrp {
+    padding: 0 20px 20px;
+    width: 600px;
+  }
+  &-list {
+    margin-top: 20px;
+  }
+  &-short {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    border: 1px solid tomato;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid tomato;
+    border-radius: 20px;
+    &-title {
+      text-transform: uppercase;
+      color: white;
+      padding: 5px;
+      background-color: tomato;
+      border-radius: 5px;
+    }
+    &-tags {
+      display: flex;
+			list-style: none;
+      &__item:not(:last-child)::after {
+        content: '/';
+				margin-left: 5px;
+				margin-right: 5px;
+      }
+    }
+  }
+}
+
+.tag {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  list-style: none;
+  &-item {
+    padding: 10px;
+    background-color: transparent;
+    color: teal;
+    border-radius: 5px;
+    border: 1px solid teal;
+    cursor: pointer;
+    &--checked {
+      background-color: tomato;
+      color: white;
+      border: none;
+    }
+  }
+}
